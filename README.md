@@ -11,9 +11,9 @@ There are two types of messages handled:
     - Appends sender's username to wiki "referrals-nextmonth" list.
 
 Misc Features Included:
-1) Subject is "Replace Month" and "referrals" wiki only has "Update Approved" in wiki
+1) Subject is "Replace Month" and "referrals" wiki when wiki only has "Update Approved" 
     - Replaces wiki "referrals" with contents of "referrals-nextmonth" and resets list.
     - Sends notification of this occurrence to all participating users 
 2) Subject is "Announcement" and matches username
     - Sends out contents of the message body as a message to all participating users
-    - Please Note: misuse of this is at your own risk.
+    - Please Note: misuse at your own risk.
