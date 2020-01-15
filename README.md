@@ -1,6 +1,8 @@
 # Public Mobile Referral Bot
 Responds to inbox messages of people looking for Referral codes for Public Mobile.  It is planned for expansion to different carriers on respective subreddits.
 
+Code is licensed under GNU GPLv3.  Original code is licensed under MIT.
+
 There are two types of messages handled:
 1) Subject is "PM Referral"
     - Send a message back providing the referral code and username of the owner of the code.
