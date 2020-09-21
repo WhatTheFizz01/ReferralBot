@@ -1,5 +1,5 @@
-# Public Mobile Referral Bot
-Responds to inbox messages of people looking for Referral codes for Public Mobile.  It is planned for expansion to different carriers on respective subreddits.
+# Referral Bot
+Responds to inbox messages of people looking for Referral codes.  It is planned for expansion to different carriers on respective subreddits.
 
 Code is licensed under GNU GPLv3.  Original code is licensed under MIT.
 
@@ -12,10 +12,18 @@ There are two types of messages handled:
 3) Subject is "Renewal"
     - Appends sender's username to wiki "referrals-nextmonth" list.
 
-Misc Features Included:
+##Misc Features Included:
 1) Subject is "Replace Month" and "referrals" wiki when wiki only has "Update Approved" 
     - Replaces wiki "referrals" with contents of "referrals-nextmonth" and resets list.
     - Sends notification of this occurrence to all participating users 
 2) Subject is "Announcement" and matches username
     - Sends out contents of the message body as a message to all participating users
     - Please Note: misuse at your own risk.
+
+
+##Configuration:
+Configuration is done through the referralbot.ini.
+
+The referral system can be run from wiki pages or from local files. The referralOutputMethod value specifies "wiki" or "file", with the wiki page names or filenames defined in their associated sections.
+
+

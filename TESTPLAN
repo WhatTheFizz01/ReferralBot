@@ -1,0 +1,82 @@
+* pyunit this eventually *
+
+[X] footer
+
+testing:
+responder:
+[X] age check fail
+[X] karma check fail
+
+responder:
+[X] "IME Referral" no codes
+[X] "IME Referral" success
+[X] "re:"
+[X] "Opt-in" success
+[X] "Opt-in" already on list
+[X] "Opt-in" bad code format
+[X] "Opt-in" bad code
+[X] "Opt-in" leading whitespace
+[X] "Renewal" success
+[X] "Renewal" already on list
+[X] "Renewal" bad code format
+[X] "Renewal" bad code
+[X] "Replace Month", "Update approved" in file
+[X] "Replace Month", something else in file
+[X] "Announcement" from contact user
+[X] "Announcement" from someone else
+[X] other subject
+
+wikireferralhandler:
+[X] save user/code
+[X] get random referral
+[X] get users (used in announcements)
+[X] get codes
+[X] replace (process renewal)
+[X] wiki not found : ReferralBotFatalException
+[X] can't write to wiki : ReferralBotFatalException
+[X] can't read from wiki : ReferralBotFatalException
+
+wikirenewalhandler:
+[X] save user/code
+[ ] get random referral
+[ ] get users
+[X] get codes (used in duplicate check)
+[X] replace (process renewal)
+[X] wiki not found : ReferralBotFatalException
+[X] can't write to wiki : ReferralBotFatalException
+[ ] can't read from wiki : ReferralBotFatalException
+
+filereferralhandler:
+[X] save user/code
+[X] get random referral
+[X] get users (used in announcements)
+[X] get codes (used in duplicate check)
+[X] replace (process renewal)
+[X] file not found - write : ReferralBotFatalException
+[X] file not found - read : ReferralBotFatalException
+[X] can't write to file : ReferralBotFatalException
+[X] can't read from file : ReferralBotFatalException
+
+filerenewalhandler:
+[X] save user/code
+[ ] get random referral
+[ ] get users
+[X] get codes (used in duplicate check)
+[X] replace (process renewal)
+[X] file not found - write : ReferralBotFatalException
+[X] file not found - read : ReferralBotFatalException
+[X] can't write to file : ReferralBotFatalException
+[X] can't read from file : ReferralBotFatalException
+
+renewalhandler
+[X] process renewal
+[X] can't find source wiki (renewal list) : ReferralBotFatalException
+[X] can't read from source wiki (renewal list) : ReferralBotFatalException
+[ ] can't write to source wiki (renewal list) : ReferralBotFatalException
+[X] can't find target wiki (referral list - needed for approval anyway) : ReferralBotFatalException
+[X] can't write to target wiki (referral list) : ReferralBotFatalException
+[X] can't find source file (renewal list) : ReferralBotFatalException
+[X] can't read from source file (renewal list) : ReferralBotFatalException
+[X] can't write to source file (renewal list) : ReferralBotFatalException
+[X] can't find target file (referral list - needed for approval anyway) : ReferralBotFatalException
+[X] can't write to target file (referral list) : ReferralBotFatalException
