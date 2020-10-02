@@ -234,8 +234,8 @@ class Responder(object):
                 raise ReferralBotFatalException(error)
             message_body = self._config.renewal_complete
             users = self._referralHandler.get_usernames()
-            for users in users:
-                self._reddit.redditor(users).message(self._config.renewal_complete_subject, message_body)
+            for user in users:
+                self._reddit.redditor(user).message(self._config.renewal_complete_subject, message_body)
             self._replyMessage += self._config.renewal_process_success
         else:
             logging.info("[Info] Responding with general response.  Refusing list update request.")
@@ -247,8 +247,8 @@ class Responder(object):
             logging.info("[Info] Sending mass message...")
             users = self._referralHandler.get_usernames()
             message_body = self._message.body
-            for users in users:
-                self._reddit.redditor(users).message(self._config.announcement_subject, message_body)
+            for user in users:
+                self._reddit.redditor(user).message(self._config.announcement_subject, message_body)
             self._replyMessage += self._config.announcement_success_message
         else:
             logging.info("[Info] Responding with general response.  Refusing announcement request.")
