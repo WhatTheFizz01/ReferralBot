@@ -7,6 +7,7 @@ import traceback
 import logging
 
 from praw.exceptions import RedditAPIException
+from praw.models import Message
 
 from exception.exceptions import ReferralBotFatalException
 from responder import Responder
@@ -36,9 +37,10 @@ def handle():
 
         try:
             for message in reddit.inbox.unread(limit=None):
-                responder = Responder(reddit, config, message)
-                responder.run()
-                message.mark_read()
+                if isinstance(message, Message):
+                    responder = Responder(reddit, config, message)
+                    responder.run()
+                    message.mark_read()
             time.sleep(30)
 
         except ReferralBotFatalException:
