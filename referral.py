@@ -1,6 +1,7 @@
-import ssl
-import urllib.request
 import re
+import json
+import logging
+import requests
 
 from exception.exceptions import InvalidCodeFormatException, InvalidCodeException
 from referralbotconfig import ReferralBotConfig
@@ -29,12 +30,18 @@ class Referral(object):
             bool: True = format is good
                    False = format is incorrect
         """
-        ssl._create_default_https_context = ssl._create_unverified_context
-        with urllib.request.urlopen(self._createlink()) as response:
-            html = response.read().decode('utf-8')
-            # look for the checkbox icon on the page
-            if re.search(self._config.html_match_success, html) is None:
-                raise InvalidCodeException()
+
+# 2021/03/07: quick and dirty fix
+        data = {"service": "account", "operation": "isValidReferral", "params": {"referralCode": self._code}}
+        resp = requests.post('https://publicmobile.ca/proxy', json=data)
+        resp_json = resp.json()
+
+        logging.info(json.dumps(resp_json))
+
+        logging.info(resp_json['response']['data']['isActiveAccount'])
+
+        if not resp_json['response']['data']['isActiveAccount']:
+            raise InvalidCodeException()
 
         return True
 
